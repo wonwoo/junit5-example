@@ -1,8 +1,6 @@
 package me.wonwoo;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
-import org.junit.jupiter.api.TestReporter;
+import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +28,12 @@ class TestInfoTest {
     values.put("user name", "dk38");
     values.put("award year", "1974");
     testReporter.publishEntry(values);
+  }
+
+  @RepeatedTest(value = 1, name = "{displayName} {currentRepetition}/{totalRepetitions}")
+  @DisplayName("Repeat!")
+  void customDisplayName(TestInfo testInfo) {
+    assertEquals(testInfo.getDisplayName(), "Repeat! 1/1");
   }
 
 }
