@@ -32,7 +32,7 @@ public class AssertionsDemo {
 
   @Test
   void exceptionTesting() {
-    Throwable exception = expectThrows(IllegalArgumentException.class, () -> {
+    Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
       throw new IllegalArgumentException("a message");
     });
     assertEquals("a message", exception.getMessage());
