@@ -3,7 +3,7 @@ package me.wonwoo.extension;
 import org.junit.jupiter.api.extension.*;
 
 public class ExtensionOrder implements BeforeAllCallback, BeforeEachCallback,
-    BeforeTestExecutionCallback, AfterTestExecutionCallback,
+    BeforeTestExecutionCallback, TestInstancePostProcessor, AfterTestExecutionCallback,
     AfterEachCallback, AfterAllCallback {
 
   @Override
@@ -12,29 +12,31 @@ public class ExtensionOrder implements BeforeAllCallback, BeforeEachCallback,
   }
 
   @Override
+  public void postProcessTestInstance(Object testInstance, ExtensionContext context) throws Exception {
+    System.out.println("2. postProcessTestInstance");
+  }
+  @Override
   public void beforeEach(ExtensionContext context) throws Exception {
-    System.out.println("2. beforeEach");
+    System.out.println("3. beforeEach");
   }
 
   @Override
   public void beforeTestExecution(ExtensionContext context) throws Exception {
-    System.out.println("3. beforeTestExecution");
+    System.out.println("4. beforeTestExecution");
   }
 
   @Override
   public void afterTestExecution(ExtensionContext context) throws Exception {
-    System.out.println("4. afterTestExecution");
+    System.out.println("5. afterTestExecution");
   }
 
   @Override
   public void afterEach(ExtensionContext context) throws Exception {
-    System.out.println("5. afterEach");
+    System.out.println("6. afterEach");
   }
 
   @Override
   public void afterAll(ExtensionContext context) throws Exception {
-    System.out.println("6. afterAll");
+    System.out.println("7. afterAll");
   }
-
-
 }
