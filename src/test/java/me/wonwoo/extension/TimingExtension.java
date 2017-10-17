@@ -7,7 +7,8 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
-import static org.junit.jupiter.api.extension.ExtensionContext.*;
+import static org.junit.jupiter.api.extension.ExtensionContext.Namespace;
+import static org.junit.jupiter.api.extension.ExtensionContext.Store;
 
 public class TimingExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
 

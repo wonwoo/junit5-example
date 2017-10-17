@@ -6,7 +6,8 @@ import org.mockito.MockitoAnnotations;
 
 import java.lang.reflect.Parameter;
 
-import static org.junit.jupiter.api.extension.ExtensionContext.*;
+import static org.junit.jupiter.api.extension.ExtensionContext.Namespace;
+import static org.junit.jupiter.api.extension.ExtensionContext.Store;
 import static org.mockito.Mockito.mock;
 
 public class MockitoExtension implements TestInstancePostProcessor, ParameterResolver {
