@@ -1,4 +1,5 @@
-package me.wonwoo;
+package me.wonwoo.param;
+
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,7 +14,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ParameterizedDemo {
+class ParameterizeTest {
 
   @ParameterizedTest
   @ValueSource(strings = { "Hello", "World" })

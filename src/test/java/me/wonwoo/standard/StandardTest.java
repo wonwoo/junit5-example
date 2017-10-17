@@ -1,13 +1,13 @@
-package me.wonwoo;
+package me.wonwoo.standard;
 
 import org.junit.jupiter.api.*;
 
 /**
  * Created by wonwoo on 2016. 7. 17..
  */
-class StandardTests {
+class StandardTest {
 
-  StandardTests(){
+  StandardTest(){
 
   }
 

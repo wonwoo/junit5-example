@@ -1,4 +1,4 @@
-package me.wonwoo;
+package me.wonwoo.standard;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @Tag("fast")
 @Tag("model")
-public class AssertionsDemo {
+public class AssertionsTest {
 
   @Test
   void standardAssertions() {

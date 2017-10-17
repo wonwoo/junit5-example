@@ -1,4 +1,4 @@
-package me.wonwoo;
+package me.wonwoo.standard;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  * Created by wonwoo on 2016. 7. 17..
  */
 @DisplayName("A special test case")
-class DisplayNameDemo {
+class DisplayNameTest {
 
   @Test
   @DisplayName("Custom test name containing spaces")

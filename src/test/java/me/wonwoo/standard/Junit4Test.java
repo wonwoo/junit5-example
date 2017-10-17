@@ -1,4 +1,4 @@
-package me.wonwoo;
+package me.wonwoo.standard;
 
 import org.junit.*;
 

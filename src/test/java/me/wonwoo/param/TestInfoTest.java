@@ -1,4 +1,4 @@
-package me.wonwoo;
+package me.wonwoo.param;
 
 import org.junit.jupiter.api.*;
 
