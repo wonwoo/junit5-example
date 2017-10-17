@@ -14,6 +14,8 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
 
   private final Logger logger = Logger.getLogger(this.getClass().getSimpleName());
 
+  private static final Namespace NAMESPACE = Namespace.create(TimingExtension.class);
+
   @Override
   public void beforeTestExecution(ExtensionContext context) throws Exception {
     getStore(context).put(context.getRequiredTestMethod(), System.currentTimeMillis());
@@ -28,7 +30,7 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
   }
 
   private Store getStore(ExtensionContext context) {
-    return context.getStore(Namespace.create(getClass(), context));
+    return context.getStore(NAMESPACE);
   }
 
 }

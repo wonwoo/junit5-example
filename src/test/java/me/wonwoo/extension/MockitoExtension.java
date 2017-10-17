@@ -12,6 +12,8 @@ import static org.mockito.Mockito.mock;
 
 public class MockitoExtension implements TestInstancePostProcessor, ParameterResolver {
 
+  private static final Namespace NAMESPACE = Namespace.create(MockitoExtension.class);
+
   @Override
   public void postProcessTestInstance(Object o, ExtensionContext extensionContext) throws Exception {
     MockitoAnnotations.initMocks(o);
@@ -29,7 +31,7 @@ public class MockitoExtension implements TestInstancePostProcessor, ParameterRes
 
   private Object getMock(Parameter parameter, ExtensionContext extensionContext) {
     Class<?> type = parameter.getType();
-    Store store = extensionContext.getStore(Namespace.create(MockitoExtension.class, type));
+    Store store = getStore(extensionContext);
     String mockName = getMockName(parameter);
     if (mockName != null) {
       return store.getOrComputeIfAbsent(mockName, key -> mock(type, mockName));
@@ -47,4 +49,9 @@ public class MockitoExtension implements TestInstancePostProcessor, ParameterRes
     }
     return null;
   }
+
+  private Store getStore(ExtensionContext context) {
+    return context.getStore(NAMESPACE);
+  }
+
 }
