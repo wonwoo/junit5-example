@@ -11,6 +11,9 @@ import static org.mockito.Mockito.verify;
 @MockitoJUnitJupiter
 class MockitoTest1 {
 
+  private MockitoTest1() {
+  }
+
   @Test
   void injection_mock(@Mock List<Integer> numbers) {
     numbers.add(1);
