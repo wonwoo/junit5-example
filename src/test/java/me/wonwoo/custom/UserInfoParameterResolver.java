@@ -4,8 +4,6 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolver;
 
-import java.util.Optional;
-
 class UserInfoParameterResolver implements ParameterResolver {
 
   @Override
