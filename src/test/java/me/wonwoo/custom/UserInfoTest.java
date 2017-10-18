@@ -20,8 +20,14 @@ class UserInfoTest {
   @Nested
   class NestedUserInfoTest {
 
+    private final UserInfo userInfo;
+
+    NestedUserInfoTest(UserInfo userInfo) {
+      this.userInfo = userInfo;
+    }
+
     @Test
-    void user_info_test(UserInfo userInfo) {
+    void user_info_test() {
       assertEquals(userInfo.getName(), "wonwoo");
       assertEquals(userInfo.getEmail(), "wonwoo@test.com");
     }
